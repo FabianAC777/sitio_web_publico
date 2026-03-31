@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundLab - Beats & Estudio de Producción</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">🎛️ SoundLab</div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#beats">Beats</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#licencias">Licencias</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Beats Premium para Tu Próximo Hit</h1>
+            <p>Acceso a miles de beats profesionales. Estudios de grabación y producción de clase mundial.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">🎧 Explorar Beats</button>
+                <button class="btn btn-secondary">📅 Reservar Estudio</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEATS SECTION -->
+    <section class="beat-store" id="beats">
+        <div class="container">
+            <h2>🎵 Tienda de Beats Profesionales</h2>
+            <p>Encuentra los beats perfectos para tu producción musical</p>
+            
+            <!-- FILTROS -->
+            <div class="beats-filter">
+                <input type="text" class="filter-input" placeholder="Buscar beat..." id="searchInput">
+                <button class="filter-btn active" data-genre="todos">Todos</button>
+                <button class="filter-btn" data-genre="trap">Trap</button>
+                <button class="filter-btn" data-genre="reggaeton">Reggaeton</button>
+                <button class="filter-btn" data-genre="hip-hop">Hip-Hop</button>
+                <button class="filter-btn" data-genre="r-b">R&B</button>
+            </div>
+
+            <!-- REPRODUCTOR ACTUAL -->
+            <div class="beats-player-container">
+                <div class="player-current-beat">
+                    <div class="beat-image">🎹</div>
+                    <div class="beat-info">
+                        <div class="beat-title" id="currentBeatTitle">Midnight Vibes</div>
+                        <div class="beat-artist">Producido por: SoundLab Studios</div>
+                        <span class="beat-genre">Trap/HipHop</span>
+                        <div class="waveform-container" id="waveform">
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="player-controls">
+                    <button class="play-button" id="playBtn">▶</button>
+                    <div class="license-options">
+                        <button class="license-btn" onclick="selectLicense('basic', 29)">Basic - $29</button>
+                        <button class="license-btn" onclick="selectLicense('premium', 99)">Premium - $99</button>
+                        <button class="license-btn" onclick="selectLicense('trackout', 199)">Trackout - $199</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LISTA DE BEATS -->
+            <div class="beats-list" id="beatsList">
+                <!-- Los beats se generarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS SECTION -->
+    <section class="servicios" id="servicios">
+        <div class="container">
+            <h2>Nuestros Servicios Premium</h2>
+            <p>Todo lo que necesitas para llevar tu música al siguiente nivel</p>
+            
+            <div class="cards-grid">
+                <div class="service-card">
+                    <div class="card-icon">🎙️</div>
+                    <h3>Grabación Profesional</h3>
+                    <p>Cabinas acústicamente tratadas con equipamiento de última generación para capturar la mejor calidad de tu voz.</p>
+                    <button class="btn btn-outline">Reservar</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-icon">🎚️</div>
+                    <h3>Mezcla & Masterización</h3>
+                    <p>Nuestros ingenieros expertos refinan cada detalle de tu producción para un sonido profesional y competitivo.</p>
+                    <button class="btn btn-outline">Reservar</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-icon">🎼</div>
+                    <h3>Producción Musical</h3>
+                    <p>Crea beats originales y arreglos únicos junto a productores experimentados en múltiples géneros.</p>
+                    <button class="btn btn-outline">Reservar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LICENCIAS SECTION -->
+    <section class="licencias" id="licencias">
+        <div class="container">
+            <h2>Planes de Licencia</h2>
+            <p>Elige el plan que mejor se adapte a tus necesidades</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <p class="price">$29<span>/beat</span></p>
+                    <ul class="features">
+                        <li>✓ Uso no exclusivo</li>
+                        <li>✓ Streaming ilimitado</li>
+                        <li>✓ 2,000 descargas/año</li>
+                        <li>✗ Sin crédito comercial</li>
+                        <li>✗ Sin stems individuales</li>
+                    </ul>
+                    <button class="btn btn-outline">Elegir Plan</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <span class="badge">⭐ Más Popular</span>
+                    <h3>Premium</h3>
+                    <p class="price">$99<span>/beat</span></p>
+                    <ul class="features">
+                        <li>✓ Uso no exclusivo</li>
+                        <li>✓ Streaming ilimitado</li>
+                        <li>✓ Descargas ilimitadas</li>
+                        <li>✓ Crédito comercial visible</li>
+                        <li>✓ Soporte prioritario</li>
+                    </ul>
+                    <button class="btn btn-primary">Elegir Plan</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Trackout</h3>
+                    <p class="price">$199<span>/beat</span></p>
+                    <ul class="features">
+                        <li>✓ Acceso a stems individuales</li>
+                        <li>✓ Edición total permitida</li>
+                        <li>✓ Uso comercial</li>
+                        <li>✓ Remixeo permitido</li>
+                        <li>✓ Asesoría técnica</li>
+                    </ul>
+                    <button class="btn btn-outline">Elegir Plan</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Unlimited</h3>
+                    <p class="price">$399<span>/mes</span></p>
+                    <ul class="features">
+                        <li>✓ Beats ilimitados</li>
+                        <li>✓ Todos los stems</li>
+                        <li>✓ Edición y remixeo total</li>
+                        <li>✓ Asesoría profesional</li>
+                        <li>✓ Descuentos en servicios</li>
+                    </ul>
+                    <button class="btn btn-outline">Elegir Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS SECTION -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <h2>Lo que Dicen Nuestros Artistas</h2>
+            <p>Testimonios de productores y artistas que crecieron con SoundLab</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"SoundLab cambió mi carrera. Los beats son de calidad profesional y los precios son justos. Recomiendo ampliamente este servicio."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JM</div>
+                        <div>
+                            <div class="testimonial-name">Juan Martínez</div>
+                            <div class="testimonial-role">Productor de Trap</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"El estudio de grabación es increíble. Los ingenieros saben exactamente qué hacer para sacar lo mejor de ti. 100% recomendado."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">KL</div>
+                        <div>
+                            <div class="testimonial-name">Karen López</div>
+                            <div class="testimonial-role">Artista RnB</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"He probado muchos servicios de beats, pero ninguno como SoundLab. La variedad, calidad y servicio al cliente son excepcionales."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">DG</div>
+                        <div>
+                            <div class="testimonial-name">Diego García</div>
+                            <div class="testimonial-role">Productor Hip-Hop</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            
+            <div class="faq-container">
+                <details class="faq-item">
+                    <summary>¿Cómo funcionan las regalías en SoundLab?</summary>
+                    <p>Las regalías varían según el plan de licencia. Con el plan Premium recibes crédito visible en plataformas digitales. El plan Unlimited incluye acceso a nuestro sistema de seguimiento de regalías en tiempo real para que monitorees tus ganancias automáticamente.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>¿Qué son los Stems y cómo los recibo?</summary>
+                    <p>Los Stems son pistas individuales de un beat (batería, bajos, melodía, etc.). Con planes Trackout y Unlimited recibes un archivo ZIP descargable con todos los stems. Se entregan vía email o descarga directa en nuestra plataforma en menos de 24 horas.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>¿Cuál es el proceso para reservar el estudio?</summary>
+                    <p>Accede a nuestro calendario en línea en la sección "Reservar Estudio", selecciona la fecha y hora deseada, confirma el tipo de servicio (grabación, mezcla, etc.) y realiza el pago. Recibirás confirmación con los detalles de acceso en tu email 24 horas antes.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>¿Puedo usar los beats en YouTube, TikTok y Spotify?</summary>
+                    <p>Sí, absolutamente. Con cualquier plan de licencia puedes monetizar en plataformas digitales. Asegúrate de dar crédito según el plan contratado. Revisa nuestros términos específicos para cada plataforma en la sección de documentación.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>¿Qué equipo usan en el estudio?</summary>
+                    <p>Contamos con equipamiento de última generación: micrófonos Neumann U87, interfaces RME, monitores Genelec, y una sala de control acústicamente tratada. Nuestros ingenieros están certificados y tienen años de experiencia en producción musical profesional.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>¿Hay opciones de pago flexible?</summary>
+                    <p>Sí. Ofrecemos planes de pago mensual, cuatrimestral y anual. Los planes anuales incluyen 20% de descuento. Además aceptamos todas las tarjetas de crédito, transferencias bancarias y billeteras digitales para tu comodidad.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🎛️ SoundLab</h4>
+                    <p>Producción musical profesional, beats exclusivos y servicios de estudio de clase mundial.</p>
+                    <div class="social-links">
+                        <a href="#instagram">Instagram</a>
+                        <a href="#twitter">Twitter</a>
+                        <a href="#youtube">YouTube</a>
+                        <a href="#tiktok">TikTok</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>📞 Contacto</h4>
+                    <p>Email: <a href="mailto:info@soundlab.com">info@soundlab.com</a></p>
+                    <p>Teléfono: <a href="tel:+34123456789">+34 123 456 789</a></p>
+                    <p>Ubicación: Calle Principal 123, Madrid</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#beats">Beats</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#licencias">Licencias</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 SoundLab. Todos los derechos reservados. | <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
