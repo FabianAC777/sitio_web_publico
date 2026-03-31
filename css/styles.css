@@ -369,6 +369,8 @@ section > .container > p {
     font-size: 3rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
 }
 
 .beat-info {
@@ -589,13 +591,45 @@ section > .container > p {
 .service-card {
     background: white;
     border-radius: 15px;
-    padding: 2rem;
+    padding: 0;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     border: 2px solid transparent;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.service-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover .service-image::after {
+    opacity: 0.4;
+}
+
+.service-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .service-card::before {
@@ -786,6 +820,8 @@ section > .container > p {
     color: white;
     font-weight: 700;
     font-size: 1.2rem;
+    background-size: cover;
+    background-position: center;
 }
 
 .testimonial-name {
