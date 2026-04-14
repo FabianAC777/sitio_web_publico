@@ -1,3 +1,10 @@
+/*
+    SoundLab CSS: utiliza un reset ligero y estilos responsivos.
+    Buenas prácticas:
+    - Resetear márgenes y paddings para un diseño consistente.
+    - Usar box-sizing:border-box para evitar cálculos complejos de ancho.
+    - Mantener estilos separados en secciones con comentarios claros.
+*/
 * {
     margin: 0;
     padding: 0;

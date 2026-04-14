@@ -1,3 +1,10 @@
+/**
+ * SoundLab JavaScript
+ * - Mantener los datos de beats separados de la lógica de interfaz.
+ * - Usar funciones limpias para renderizar componentes y manejar eventos.
+ * - Minimizar el acceso directo al DOM y reusar selectores cuando sea posible.
+ */
+
 // ===== BEATS DATA =====
 const beatsData = [
     { id: 1, title: 'Midnight Vibes', artist: 'SoundLab Studios', genre: 'trap', price: 29, image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=250&h=150&fit=crop' },
@@ -11,6 +18,8 @@ const beatsData = [
 ];
 
 // ===== RENDER BEATS =====
+// Esta función renderiza la lista de beats según el filtro y el texto de búsqueda.
+// Se reconstruye el listado completo en cada cambio para mantener el DOM sincronizado.
 function renderBeats(filter = 'todos', search = '') {
     const beatsList = document.getElementById('beatsList');
     beatsList.innerHTML = '';
