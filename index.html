@@ -11,9 +11,10 @@
     <!-- Los enlaces internos permiten una experiencia de usuario más rápida y mejoras de accesibilidad -->
     <!-- Mantén el HTML separado del CSS y JavaScript mediante archivos externos para mejor mantenimiento -->
     <!-- NAVBAR -->
+    <!-- Contenedor principal de la navegación de la página -->
     <nav class="navbar">
         <div class="navbar-container">
-            <div class="logo">🎛️ SoundLab</div>
+            <div class="logo">SoundLab</div>
             <button class="menu-toggle" id="menuToggle">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#beats">Beats</a></li>
@@ -29,38 +30,39 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="hero" style="background-image: linear-gradient(135deg, rgba(15, 52, 96, 0.7) 0%, rgba(58, 21, 149, 0.7) 100%), url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&h=600&fit=crop'); background-size: cover; background-position: center;">
+    <section class="hero" style="background-image: linear-gradient(135deg, rgba(15, 52, 96, 0.7) 0%, rgba(58, 21, 149, 0.7) 100%), url('https://loremflickr.com/1200/600/music,studio/all'); background-size: cover; background-position: center;">
         <div class="hero-content">
             <h1>Beats Premium para Tu Próximo Hit</h1>
             <p>Acceso a miles de beats profesionales. Estudios de grabación y producción de clase mundial.</p>
             <div class="hero-buttons">
-                <button class="btn btn-primary">🎧 Explorar Beats</button>
-                <button class="btn btn-secondary">📅 Reservar Estudio</button>
+                <button class="btn btn-primary">Explorar Beats</button>
+                <button class="btn btn-secondary">Reservar Estudio</button>
             </div>
         </div>
     </section>
 
     <!-- ESTUDIO CARRUSEL SECTION -->
+    <!-- Sección que contiene el carrusel de imágenes dinámico del estudio -->
     <section class="estudio-carrusel" id="estudio">
         <div class="container">
-            <h2>📸 Galería del Estudio</h2>
+            <h2>Galería del Estudio</h2>
             <p>Conoce nuestras instalaciones de clase mundial equipadas con la última tecnología</p>
             
             <div class="carousel-container">
                 <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Anterior">❮</button>
                 
                 <div class="carousel-slide active">
-                    <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&h=400&fit=crop" alt="Sala de Control Principal" class="carousel-img">
+                    <img src="https://loremflickr.com/800/400/recording,studio/all" alt="Sala de Control Principal" class="carousel-img">
                     <div class="carousel-caption">Sala de Control Principal</div>
                 </div>
                 
                 <div class="carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?w=800&h=400&fit=crop" alt="Cabina de Grabación Acústica" class="carousel-img">
+                    <img src="https://loremflickr.com/800/400/audio,mixer/all" alt="Cabina de Grabación Acústica" class="carousel-img">
                     <div class="carousel-caption">Cabina de Grabación Acústica</div>
                 </div>
                 
                 <div class="carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1519682577862-22b62b24e493?w=800&h=400&fit=crop" alt="Área de Producción Beatmaking" class="carousel-img">
+                    <img src="https://loremflickr.com/800/400/music,producer/all" alt="Área de Producción Beatmaking" class="carousel-img">
                     <div class="carousel-caption">Área de Producción Beatmaking</div>
                 </div>
                 
@@ -75,9 +77,10 @@
     </section>
 
     <!-- BEATS SECTION -->
+    <!-- Sección de la tienda de beats con filtros y reproductor de audio simulado -->
     <section class="beat-store" id="beats">
         <div class="container">
-            <h2>🎵 Tienda de Beats Profesionales</h2>
+            <h2>Tienda de Beats Profesionales</h2>
             <p>Encuentra los beats perfectos para tu producción musical</p>
             
             <!-- FILTROS -->
@@ -93,7 +96,7 @@
             <!-- REPRODUCTOR ACTUAL -->
             <div class="beats-player-container">
                 <div class="player-current-beat">
-                    <div class="beat-image" style="background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=200&h=200&fit=crop'); background-size: cover; background-position: center;"></div>
+                    <div class="beat-image" style="background-image: url('https://loremflickr.com/200/200/vinyl,record/all'); background-size: cover; background-position: center;"></div>
                     <div class="beat-info">
                         <div class="beat-title" id="currentBeatTitle">Midnight Vibes</div>
                         <div class="beat-artist">Producido por: SoundLab Studios</div>
@@ -114,7 +117,7 @@
                 </div>
 
                 <div class="player-controls">
-                    <button class="play-button" id="playBtn">▶</button>
+                    <button class="play-button" id="playBtn">Play</button>
                     <div class="license-options">
                         <button class="license-btn" onclick="selectLicense('basic', 29)">Basic - $29</button>
                         <button class="license-btn" onclick="selectLicense('premium', 99)">Premium - $99</button>
@@ -138,9 +141,9 @@
             
             <div class="cards-grid">
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=250&fit=crop'); background-size: cover; background-position: center;"></div>
+                    <div class="service-image" style="background-image: url('https://loremflickr.com/400/250/microphone/all'); background-size: cover; background-position: center;"></div>
                     <div class="service-content">
-                        <div class="card-icon">🎙️</div>
+                        <div class="card-icon"></div>
                         <h3>Grabación Profesional</h3>
                         <p>Cabinas acústicamente tratadas con equipamiento de última generación para capturar la mejor calidad de tu voz.</p>
                         <button class="btn btn-outline">Reservar</button>
@@ -148,9 +151,9 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1516636672472-f552e278e585?w=400&h=250&fit=crop'); background-size: cover; background-position: center;"></div>
+                    <div class="service-image" style="background-image: url('https://loremflickr.com/400/250/sound,engineer/all'); background-size: cover; background-position: center;"></div>
                     <div class="service-content">
-                        <div class="card-icon">🎚️</div>
+                        <div class="card-icon"></div>
                         <h3>Mezcla & Masterización</h3>
                         <p>Nuestros ingenieros expertos refinan cada detalle de tu producción para un sonido profesional y competitivo.</p>
                         <button class="btn btn-outline">Reservar</button>
@@ -158,9 +161,9 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&h=250&fit=crop'); background-size: cover; background-position: center;"></div>
+                    <div class="service-image" style="background-image: url('https://loremflickr.com/400/250/synthesizer/all'); background-size: cover; background-position: center;"></div>
                     <div class="service-content">
-                        <div class="card-icon">🎼</div>
+                        <div class="card-icon"></div>
                         <h3>Producción Musical</h3>
                         <p>Crea beats originales y arreglos únicos junto a productores experimentados en múltiples géneros.</p>
                         <button class="btn btn-outline">Reservar</button>
@@ -191,7 +194,7 @@
                 </div>
 
                 <div class="pricing-card featured">
-                    <span class="badge">⭐ Más Popular</span>
+                    <span class="badge">Más Popular</span>
                     <h3>Premium</h3>
                     <p class="price">$99<span>/beat</span></p>
                     <ul class="features">
@@ -241,7 +244,7 @@
             
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">"SoundLab cambió mi carrera. Los beats son de calidad profesional y los precios son justos. Recomiendo ampliamente este servicio."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop'); background-size: cover; background-position: center;"></div>
@@ -253,7 +256,7 @@
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">"El estudio de grabación es increíble. Los ingenieros saben exactamente qué hacer para sacar lo mejor de ti. 100% recomendado."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop'); background-size: cover; background-position: center;"></div>
@@ -265,7 +268,7 @@
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">"He probado muchos servicios de beats, pero ninguno como SoundLab. La variedad, calidad y servicio al cliente son excepcionales."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop'); background-size: cover; background-position: center;"></div>
@@ -280,9 +283,10 @@
     </section>
 
     <!-- COMUNIDAD Y FORMULARIOS SECTION -->
+    <!-- Sección que agrupa los tres formularios: Inscripción, Login y Contacto -->
     <section class="comunidad" id="comunidad">
         <div class="container">
-            <h2>👥 Únete a la Comunidad</h2>
+            <h2>Únete a la Comunidad</h2>
             <p>Regístrate, inicia sesión o contáctanos para empezar tu carrera musical</p>
             
             <div class="forms-grid">
@@ -395,7 +399,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>🎛️ SoundLab</h4>
+                    <h4>SoundLab</h4>
                     <p>Producción musical profesional, beats exclusivos y servicios de estudio de clase mundial.</p>
                     <div class="social-links">
                         <a href="#instagram">Instagram</a>
@@ -406,7 +410,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4>📞 Contacto</h4>
+                    <h4>Contacto</h4>
                     <p>Email: <a href="mailto:info@soundlab.com">info@soundlab.com</a></p>
                     <p>Teléfono: <a href="tel:+34123456789">+34 123 456 789</a></p>
                     <p>Ubicación: Calle Principal 123, Madrid</p>
