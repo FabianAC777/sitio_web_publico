@@ -108,3 +108,171 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
 // ===== RENDER INICIAL =====
 renderBeats();
+
+// ===== CARRUSEL LÓGICA =====
+let slideIndex = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.dot');
+
+function mostrarImagen(n) {
+    if (slides.length === 0) return;
+    
+    // Ocultar todas
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // Limites
+    if (n >= slides.length) slideIndex = 0;
+    if (n < 0) slideIndex = slides.length - 1;
+    
+    // Mostrar actual
+    slides[slideIndex].classList.add('active');
+    dots[slideIndex].classList.add('active');
+}
+
+function cambiarImagen(direccion) {
+    mostrarImagen(slideIndex += direccion);
+}
+
+function currentSlide(n) {
+    mostrarImagen(slideIndex = n);
+}
+
+// Listeners Carrusel
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+if(prevBtn) prevBtn.addEventListener('click', () => cambiarImagen(-1));
+if(nextBtn) nextBtn.addEventListener('click', () => cambiarImagen(1));
+
+// ===== FORMULARIOS Y VALIDACIONES =====
+// Estructura de Datos
+let usuariosRegistrados = [];
+
+// Expresión regular para email
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Función Modular para Validar y Mostrar Errores (actualizarDOM)
+function actualizarDOM(elementId, message, isError) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    el.textContent = message;
+    el.style.color = isError ? '#ff4757' : '#2ed573';
+}
+
+function limpiarErrores(formId) {
+    const form = document.getElementById(formId);
+    const inputs = form.querySelectorAll('input, textarea');
+    inputs.forEach(input => input.classList.remove('error-input'));
+}
+
+function marcarError(inputId) {
+    document.getElementById(inputId).classList.add('error-input');
+}
+
+// Validación Formulario Inscripción
+const formInscripcion = document.getElementById('formInscripcion');
+if(formInscripcion) {
+    formInscripcion.addEventListener('submit', function(e) {
+        e.preventDefault();
+        limpiarErrores('formInscripcion');
+        actualizarDOM('errorInscripcion', '', false);
+        actualizarDOM('successInscripcion', '', false);
+
+        const nombre = document.getElementById('regNombre').value.trim();
+        const email = document.getElementById('regEmail').value.trim();
+        const password = document.getElementById('regPassword').value.trim();
+
+        if(!nombre || !email || !password) {
+            if(!nombre) marcarError('regNombre');
+            if(!email) marcarError('regEmail');
+            if(!password) marcarError('regPassword');
+            return actualizarDOM('errorInscripcion', 'Todos los campos son obligatorios.', true);
+        }
+
+        if(!emailRegex.test(email)) {
+            marcarError('regEmail');
+            return actualizarDOM('errorInscripcion', 'Formato de correo inválido.', true);
+        }
+
+        // Crear objeto usuario
+        const nuevoUsuario = {
+            id: Date.now(),
+            nombre: nombre,
+            email: email,
+            password: password
+        };
+
+        // Guardar en arreglo
+        usuariosRegistrados.push(nuevoUsuario);
+        console.log("Usuarios registrados:", usuariosRegistrados);
+
+        // Feedback
+        actualizarDOM('successInscripcion', `¡Bienvenido ${nombre}! Te has registrado correctamente.`, false);
+        this.reset();
+    });
+}
+
+// Validación Formulario Login
+const formLogin = document.getElementById('formLogin');
+if(formLogin) {
+    formLogin.addEventListener('submit', function(e) {
+        e.preventDefault();
+        limpiarErrores('formLogin');
+        actualizarDOM('errorLogin', '', false);
+        actualizarDOM('successLogin', '', false);
+
+        const email = document.getElementById('logEmail').value.trim();
+        const password = document.getElementById('logPassword').value.trim();
+
+        if(!email || !password) {
+            if(!email) marcarError('logEmail');
+            if(!password) marcarError('logPassword');
+            return actualizarDOM('errorLogin', 'Todos los campos son obligatorios.', true);
+        }
+
+        if(!emailRegex.test(email)) {
+            marcarError('logEmail');
+            return actualizarDOM('errorLogin', 'Formato de correo inválido.', true);
+        }
+
+        // Buscar usuario en arreglo
+        const usuarioEncontrado = usuariosRegistrados.find(u => u.email === email && u.password === password);
+
+        if(usuarioEncontrado) {
+            actualizarDOM('successLogin', `¡Sesión iniciada! Bienvenido de nuevo.`, false);
+            this.reset();
+        } else {
+            actualizarDOM('errorLogin', 'Credenciales incorrectas o usuario no registrado.', true);
+        }
+    });
+}
+
+// Validación Formulario Contacto
+const formContacto = document.getElementById('formContacto');
+if(formContacto) {
+    formContacto.addEventListener('submit', function(e) {
+        e.preventDefault();
+        limpiarErrores('formContacto');
+        actualizarDOM('errorContacto', '', false);
+        actualizarDOM('successContacto', '', false);
+
+        const nombre = document.getElementById('contNombre').value.trim();
+        const email = document.getElementById('contEmail').value.trim();
+        const mensaje = document.getElementById('contMensaje').value.trim();
+
+        if(!nombre || !email || !mensaje) {
+            if(!nombre) marcarError('contNombre');
+            if(!email) marcarError('contEmail');
+            if(!mensaje) marcarError('contMensaje');
+            return actualizarDOM('errorContacto', 'Todos los campos son obligatorios.', true);
+        }
+
+        if(!emailRegex.test(email)) {
+            marcarError('contEmail');
+            return actualizarDOM('errorContacto', 'Formato de correo inválido.', true);
+        }
+
+        actualizarDOM('successContacto', '¡Mensaje enviado con éxito! Te contactaremos pronto.', false);
+        this.reset();
+    });
+}
