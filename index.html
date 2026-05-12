@@ -18,8 +18,10 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#beats">Beats</a></li>
                 <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#estudio">Estudio</a></li>
                 <li><a href="#licencias">Licencias</a></li>
                 <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#comunidad">Comunidad</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
@@ -34,6 +36,40 @@
             <div class="hero-buttons">
                 <button class="btn btn-primary">🎧 Explorar Beats</button>
                 <button class="btn btn-secondary">📅 Reservar Estudio</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTUDIO CARRUSEL SECTION -->
+    <section class="estudio-carrusel" id="estudio">
+        <div class="container">
+            <h2>📸 Galería del Estudio</h2>
+            <p>Conoce nuestras instalaciones de clase mundial equipadas con la última tecnología</p>
+            
+            <div class="carousel-container">
+                <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Anterior">❮</button>
+                
+                <div class="carousel-slide active">
+                    <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&h=400&fit=crop" alt="Sala de Control Principal" class="carousel-img">
+                    <div class="carousel-caption">Sala de Control Principal</div>
+                </div>
+                
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?w=800&h=400&fit=crop" alt="Cabina de Grabación Acústica" class="carousel-img">
+                    <div class="carousel-caption">Cabina de Grabación Acústica</div>
+                </div>
+                
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1519682577862-22b62b24e493?w=800&h=400&fit=crop" alt="Área de Producción Beatmaking" class="carousel-img">
+                    <div class="carousel-caption">Área de Producción Beatmaking</div>
+                </div>
+                
+                <button class="carousel-btn next-btn" id="nextBtn" aria-label="Siguiente">❯</button>
+            </div>
+            <div class="carousel-indicators" id="carouselIndicators">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
             </div>
         </div>
     </section>
@@ -238,6 +274,78 @@
                             <div class="testimonial-role">Productor Hip-Hop</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMUNIDAD Y FORMULARIOS SECTION -->
+    <section class="comunidad" id="comunidad">
+        <div class="container">
+            <h2>👥 Únete a la Comunidad</h2>
+            <p>Regístrate, inicia sesión o contáctanos para empezar tu carrera musical</p>
+            
+            <div class="forms-grid">
+                <!-- Formulario de Inscripción -->
+                <div class="form-card">
+                    <h3>Registro de Nuevo Usuario</h3>
+                    <form id="formInscripcion" novalidate>
+                        <div class="form-group">
+                            <label for="regNombre">Nombre Completo</label>
+                            <input type="text" id="regNombre" placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="regEmail">Correo Electrónico</label>
+                            <input type="email" id="regEmail" placeholder="tu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="regPassword">Contraseña</label>
+                            <input type="password" id="regPassword" placeholder="Crea una contraseña">
+                        </div>
+                        <div id="errorInscripcion" class="error-msg"></div>
+                        <div id="successInscripcion" class="success-msg"></div>
+                        <button type="submit" class="btn btn-primary w-100">Inscribirse</button>
+                    </form>
+                </div>
+
+                <!-- Formulario de Login -->
+                <div class="form-card">
+                    <h3>Acceso a Usuarios</h3>
+                    <form id="formLogin" novalidate>
+                        <div class="form-group">
+                            <label for="logEmail">Correo Electrónico</label>
+                            <input type="email" id="logEmail" placeholder="tu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="logPassword">Contraseña</label>
+                            <input type="password" id="logPassword" placeholder="Tu contraseña">
+                        </div>
+                        <div id="errorLogin" class="error-msg"></div>
+                        <div id="successLogin" class="success-msg"></div>
+                        <button type="submit" class="btn btn-outline w-100">Iniciar Sesión</button>
+                    </form>
+                </div>
+
+                <!-- Formulario de Contacto -->
+                <div class="form-card">
+                    <h3>Contáctanos</h3>
+                    <form id="formContacto" novalidate>
+                        <div class="form-group">
+                            <label for="contNombre">Nombre</label>
+                            <input type="text" id="contNombre" placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="contEmail">Correo Electrónico</label>
+                            <input type="email" id="contEmail" placeholder="tu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="contMensaje">Mensaje</label>
+                            <textarea id="contMensaje" rows="3" placeholder="¿En qué podemos ayudarte?"></textarea>
+                        </div>
+                        <div id="errorContacto" class="error-msg"></div>
+                        <div id="successContacto" class="success-msg"></div>
+                        <button type="submit" class="btn btn-secondary w-100" style="background:#7c3aed; border:none;">Enviar Mensaje</button>
+                    </form>
                 </div>
             </div>
         </div>
